@@ -1,0 +1,74 @@
+Let's make a game!
+name:Crypto miner
+author:Izz the Wiz
+desc:The early demo of a game about evolving things by clicking! 
+created:19/10/2022
+version:1.0.0
+ 
+ 
+ 
+Settings
+background:https://file.garden/Y1HTwGRsYnW-u3Gv/Screenshot_back.png
+building cost increase:115%
+building cost refund:50%
+ 
+CSS
+  .thing-icon,.particle
+  {
+    width:54px;
+    height:54px;
+  }
+ 
+Layout
+*main
+  contains:res, buttons
+  *res
+    contains:Resources
+    class:fullWidth
+  *buttons
+    contains:Buttons
+*store
+  contains:buildings, upgrades
+  *buildings
+    contains:BulkDisplay, Buildings
+    header:Ecosystems
+    tooltip origin:left
+  *upgrades
+    contains:Upgrades
+    header:Organism shop
+    costs:hide
+    names:hide
+ 
+ 
+Buttons
+*cryptoButton
+name:The Ethereum!
+desc:Click to make it multiply (ETHEREUM IS BEETER THEN BITCOIN CHANGE MY MIND)!
+on click:anim icon wobble
+on click:yield crypto
+icon:https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/1200px-Ethereum-icon-purple.svg.png
+icon class:shadowed
+class:bigButton hasFlares
+no text
+ 
+ 
+Resources
+*crypto|Cryptos
+name:Crypto|Cryptos 
+icon:https://i.imgur.com/8I0hUZZ.png
+shown
+ 
+show earned
+show max
+ 
+Buildings
+*Nvidia1
+name:Nvidia GeForce 210
+desc:A terrible graphics card. it's not much, but it's something.<//><b>Effect:</b><.>Normally produces 0.1 crypto every second. 
+req:0 Cryptos:earned
+cost:10 Cryptos
+on tick:yield 0.1 crypto
+show max
+icon:https://i.imgur.com/1PbqC5N.png
+ 
+ 
